@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление организации</title>
+</head>
+<body>
+
+<div>
+    <form id="f" method="post" action="add_org">
+        {% csrf_token %}
+        <p><b>Название ценности:</b></p>
+        <input type="text" name="name" placeholder="Название ..."></br>
+        <p><b>Тип ценности:</b></p>
+        <input type="text" name="type" placeholder="Тип ..."></br>
+        <p><b>Владелец:</b></p>
+        <input type="text" name="owner" placeholder="Владелец ..."></br>
+        <p><b>Дата приобретения:</b></p>
+        <input type="text" name="purchase_date" placeholder="Дата приобретения ..."></br>
+        <p><b>Описание:</b></p>
+        <input type="text" name="description" placeholder="Описание ..."></br>
+        <button type="submit" name="nameOrganization" value={{ org }}></br>
+            Add
+        </button>
+    </form>
+</div>
+
+</body>
+</html>

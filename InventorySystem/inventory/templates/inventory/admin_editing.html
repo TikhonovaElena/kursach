@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление организации</title>
+</head>
+<body>
+
+<div>
+    <form id="f" method="post" action="add_org">
+        {% csrf_token %}
+        <p><b>Organization name:</b></p>
+        <input type="text" name="org_name" placeholder="Название организации..."></br>
+        <p><b>Create date:</b></p>
+        <input type="text" name="create_date" placeholder="Дата создания..."></br>
+        <p><b>Address:</b></p>
+        <input type="text" name="address" placeholder="Адрес..."></br>
+        <p><b>Description:</b></p>
+        <input type="text" name="description" placeholder="Описание..."></br>
+        <p><b>Director:</b></p>
+        <input type="text" name="director_last_name" placeholder="Фамилия директора..."></br>
+        <input type="text" name="director_first_name" placeholder="Имя директора..."></br>
+        <input type="text" name="director_middle_name" placeholder="Отчество директора..."></br>
+        <input type="text" name="director_DOB" placeholder="ДР директора..."></br>
+        <input type="submit" value="Enter"></br>
+    </form>
+</div>
+
+</body>
+</html>
