@@ -71,14 +71,14 @@ def add_wealth(request):
 	orgs = open_file("Organizations")
 	for org in orgs:
 		if org["org_name"] == request.POST.get("org_name"):
-			wealth = {
+			w = {
 				"name": request.POST.get("name"),
 				"type": request.POST.get("type"),
 				"owner": request.POST.get("owner"),
 				"purchase_date": request.POST.get("purchase_date"),
 				"description": request.POST.get("description")
 			}
-			org["wealth"].append(wealth)
+			org["wealth"].append(w)
 			write_in_file("Organizations", str(orgs).replace("\'", "\""))
 	return render(request, "inventory/org_list.html", {"orgs": orgs})
 
@@ -92,7 +92,7 @@ def set_wealth(request):
 			{"info": {"org_name": request.POST.get("org_name")}})
 
 	orgs = open_file("Organizations")
-	return render(request, "inventory/org_info.html", {"orgs": orgs})
+	return render(request, "inventory/org_list.html", {"orgs": orgs})
 
 
 def auth(request):

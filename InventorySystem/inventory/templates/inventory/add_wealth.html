@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Добавление организации</title>
+    <title>{{org.org_name}}</title>
 </head>
 <body>
 
 <div>
-    <form id="f" method="post" action="add_org">
+    <form id="f" method="post" action="add_wealth">
         {% csrf_token %}
+        <input type="hidden" name="org_name" value = {{ info.org_name }}>
         <p><b>Название ценности:</b></p>
         <input type="text" name="name" placeholder="Название ..."></br>
         <p><b>Тип ценности:</b></p>
@@ -19,7 +20,7 @@
         <input type="text" name="purchase_date" placeholder="Дата приобретения ..."></br>
         <p><b>Описание:</b></p>
         <input type="text" name="description" placeholder="Описание ..."></br>
-        <button type="submit" name="nameOrganization" value={{ org }}></br>
+        <button type="submit" value="name"></br>
             Add
         </button>
     </form>
