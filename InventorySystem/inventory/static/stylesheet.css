@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+header {
+ display: block; /* Для старых браузеров */
+ /*background-image: url("image/gold1.jpg");
+ color: #181818;*/
+ height: 80px;
+ margin-bottom: 20px;
+ background-color: #181818;
+}
+body {
+	background-image: url("image/gold1.jpg");
+	font-size: 14pt;
+}
+
+.block {
+	background-color: #181818;
+	color: #ffbb11;
+	width: 80%;
+	margin-left: 10%;
+}
+
+.main_block {
+	margin: 20px;
+}
+
+table {
+	width: 100%
+}
+
+.description {
+	font-style: inherit;
+	color: red
+}
+
+.org_name {
+	font-size: 32pt;
+}

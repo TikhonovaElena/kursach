@@ -1,46 +1,16 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en" style="height: 100%; min-height: 100%">
-<head>
-	<meta charset="UTF-8">
-	<title>{{ org.org_name }}</title>
-</head>
-<body style="height: 100%; min-height: 100%">
+{% extends 'inventory/wrapper.html' %}
 
-<form id="f" method="post" action="set_wealth">
-    {% csrf_token %}
+{% block head %}
+<title>{{org.org_name}}</title>
+{% endblock %}
 
-
-    <div >
-        <label>Login:</label>
-        <div>
-        	<input type="hidden" name="org_name" value={{ org.org_name }}>
-            <input type="text" name="login" placeholder="Enter login...">
-        </div>
-    </div>
-
-    <div>
-        <label>Password:</label>
-        <div>
-            <input type="password" name="password" placeholder="Enter password">
-        </div>
-    </div>
-
-    <div>
-        <div>
-            </br>
-            <input type="submit" value="Enter" style="width: 80px;">
-        </div>
-    </div>
-
-</form>
+{% block content %}
 
 <div style="height: 100%; min-height: 100%">
 
-	<div>
+	<div class="main_block">
 
-
-		<p><b>Название организации: </b>{{ org.org_name }}</p>
+		<p class="org_name">{{ org.org_name }}</p>
 		<p><b>Дата создания: </b>{{ org.create_date }}</p>
 		<p><b>Адрес: </b>{{ org.address }}</p>
 		<p><b>Директор: </b>
@@ -48,7 +18,7 @@
 			{{ org.director_first_name}}
 			{{ org.director_middle_name}}
 			({{ org.director_DOB}})</p>
-		<p><b>Описание: </b>{{ org.description }}</p>
+		<p class="description">{{ org.description }}</p>
 
 		<p><h3>Ценности</h3></h3></p>
 		<table border="1" class="table table-striped">
@@ -80,9 +50,29 @@
 		</table>
 	</div>
 
-
 </div>
 
-</body>
+<form id="f" method="post" action="set_wealth">
+    {% csrf_token %}
+    <div >
+        <label>Login:</label>
+        <div>
+        	<input type="hidden" name="org_name" value={{ org.org_name }}>
+            <input type="text" name="login" placeholder="Enter login...">
+        </div>
+    </div>
+    <div>
+        <label>Password:</label>
+        <div>
+            <input type="password" name="password" placeholder="Enter password">
+        </div>
+    </div>
+    <div>
+        <div>
+            </br>
+            <input type="submit" value="Enter" style="width: 80px;">
+        </div>
+    </div>
+</form>
 
-</html>
+{% endblock %}
