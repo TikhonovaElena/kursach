@@ -6,24 +6,32 @@
 
 {% block content %}
 
-<table border="1" style="border-top: 2px solid grey; margin-top: 20px">
+<table class="table_black_gold">
 
-    <td><b>Название организации</b></td>
-    <td><b>Дата создания</b></td>
-    <td><b>Адрес</b></td>
-
+    <tr>
+        <th><b>Название организации</b></th>
+        <th><b>Дата создания</b></th>
+        <th><b>Адрес</b></th>
+    </tr>
     {% for org in orgs %}
         <tr>
             <td>
-                <form id="f" method="post" action="org_info">
-                    {% csrf_token %}
-                    <input type="submit" name="org_name" value={{ org.org_name }}>
+                <!--<script type="text/javascript">
+                    function sendform(str) {
+                        document.getElementById('f').submit()
+                    }
+                </script>-->
+                <form id="f" method="post" action="org_info">{% csrf_token %}
+                <a href="javascript:;" onclick="document.getElementById('f').submit(); return false;">
+                    <input form="f" type="hidden" name="org_name" value={{org.org_name}}>
+                </a>
                 </form>
+                {{org.org_name}}                
             </td>
             <td>{{ org.create_date }}</td>
             <td>{{ org.address }}</td>
-        </tr>
 
+        </tr>
     {% endfor %}
 </table>
 

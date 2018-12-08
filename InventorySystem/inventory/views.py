@@ -25,6 +25,8 @@ def org_list(request):
 
 def org_info(request):
 	orgs = open_file("Organizations")
+	a = request.POST.get("org_name")
+	print(a)
 	for org in orgs:
 		if org["org_name"] == request.POST.get("org_name"):
 			return render(request, "inventory/org_info.html", {"org": org})

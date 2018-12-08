@@ -6,51 +6,44 @@
 
 {% block content %}
 
-<div style="height: 100%; min-height: 100%">
+	<p class="org_name">{{ org.org_name }}</p>
+	<p><b>Дата создания: </b>{{ org.create_date }}</p>
+	<p><b>Адрес: </b>{{ org.address }}</p>
+	<p><b>Директор: </b>
+		{{ org.director_last_name}}
+		{{ org.director_first_name}}
+		{{ org.director_middle_name}}
+		({{ org.director_DOB}})</p>
+	<p class="description">{{ org.description }}</p>
 
-	<div class="main_block">
+	<table class="table_black_gold">
+	<tr>
+		<th><b>Название</b></th>
+		<th><b>Тип</b></th>
+		<th><b>Дата приобретения</b></th>
+	</tr>
 
-		<p class="org_name">{{ org.org_name }}</p>
-		<p><b>Дата создания: </b>{{ org.create_date }}</p>
-		<p><b>Адрес: </b>{{ org.address }}</p>
-		<p><b>Директор: </b>
-			{{ org.director_last_name}}
-			{{ org.director_first_name}}
-			{{ org.director_middle_name}}
-			({{ org.director_DOB}})</p>
-		<p class="description">{{ org.description }}</p>
-
-		<p><h3>Ценности</h3></h3></p>
-		<table border="1" class="table table-striped">
-
-		<tr>
-			<th class="text-center"><b>Название</b></th>
-			<th class="text-center"><b>Тип</b></th>
-			<th class="text-center"><b>Дата приобретения</b></th>
-		</tr>
-
-		{% for w in org.wealth %}
-		<tr>
-
-			<td>
-				<form id="f" method="post" action="wealth_info">
-					{% csrf_token %}
-					<input type="hidden" name="org_name" value={{ org.org_name }}>
-					<button type="submit" name="name" value={{ w.name }}>
-						{{ w.name }}
-					</button>
+	{% for w in org.wealth %}
+	<tr>
+		<td>
+			<form id="f" method="post" action="wealth_info">{% csrf_token %}
+                <a href="javascript:;" onclick="document.getElementById('f').submit(); return false;">
+                </a>
+				{% csrf_token %}
+				<input form="f" type="hidden" name="org_name" value={{ org.org_name }}>
+				<!--<button type="submit" name="name" value={{ w.name }}>
+					{{ w.name }}
+				</button>-->
+				<input form="f" type="hidden" name="name" value={{ w.name }}>
+				{{w.name}}
 				</form>
-			</td>
-			<td>{{ w.type }}</td>
-			<td>{{ w.purchase_date }}</td>
+		</td>
+		<td>{{ w.type }}</td>
+		<td>{{ w.purchase_date }}</td>
+	</tr>
 
-		</tr>
-
-	{% endfor %}
-		</table>
-	</div>
-
-</div>
+{% endfor %}
+	</table>
 
 <form id="f" method="post" action="set_wealth">
     {% csrf_token %}
