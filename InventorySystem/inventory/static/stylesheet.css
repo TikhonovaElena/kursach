@@ -1,6 +1,8 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 16px;
 }
 header {
  display: block; /* Для старых браузеров */
@@ -12,7 +14,6 @@ header {
 }
 body {
 	background-image: url("image/gold1.jpg");
-	font-size: 14pt;
 }
 
 .block {
@@ -24,19 +25,19 @@ body {
 	padding: 20px;
 }
 
-.main_block {
-	margin: 20px;
-}
-
-
-.org_name {
+.name {
 	font-size: 32pt;
 }
+div .about{
+	color: #ff4488;
+	margin-bottom: 20px;
+}
 
+.descriprion {
+	color: #ffbb11;
+}
 
-
-
-.table_black_gold {
+.t-pink {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 16px;
 	width: calc(100%);
@@ -45,27 +46,29 @@ body {
 	background: #181818;
 	position: relative;
 }
-.table_black_gold th {
+.t-pink th {
 	color: #181818;
-	background: #ff4488;
+	background: #ffbb11;
+	/*background: #ff4488;*/
 	border-bottom: 1px solid #ff4488;
 	padding: 12px 17px;
 }
-.table_black_gold td {
+.t-pink td {
 	color: #e1e1e1;
 	border-bottom: 1px solid #ff4488;
 	border-right: 1px solid #ff4488;
 	padding: 7px 17px;
 }
-.table_black_gold tr:last-child td {
+.t-pink tr:last-child td {
 	border-bottom:  none;
 }
-.table_black_gold td:last-child {
+.t-pink td:last-child {
 	border-right: none;
 }
-.table_black_gold tr:hover td {
+.t-pink tr:hover td {
 	background: #550022;
 }
+
 *::selection {
 	color: #ff4488;
 	background: none;
@@ -74,9 +77,35 @@ body {
 	color: #ff4488;
 	background: none;
 }
-a {
+button {
 	position: absolute;
 	width: 100%;
 	left: 0px;
-	height: 1.5em;
+	height: 2.5em;
+	background: none;
+	color: #e1e1e1;
+	margin-top: -7px;
+	border: none;
+	outline: none;
 }
+
+select, input {
+	width: 300px;
+	margin: 10px;
+	height: 3em;
+	background: #181818;
+	border: 1px solid #ff4488;
+	color: #e1e1e1;
+	outline: none;
+	text-align: center;
+}
+
+option {
+	color: #ff4488;
+}
+/*b::selection {
+	color: #e1e1e1;
+}*/
+
+
+

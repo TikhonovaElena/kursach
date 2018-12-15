@@ -1,0 +1,20 @@
+{% extends 'inventory/wrapper.html' %}
+
+{% block head %}
+<title>Удаление организации</title>
+{% endblock %}
+
+{% block content %}
+
+<form id="f" method="post" action="delete_wealth" style="text-align: center;">
+    {% csrf_token %}
+    <select name="name">
+        {% for w in org.wealth %}
+            <option value="{{w.name}}">{{w.name}}
+        {% endfor %}
+    </select><br><br>
+    <input type="hidden" name="org_name" value={{org.org_name}}>
+    <input type="submit" value="удалить ценность"></br>
+</form>
+
+{% endblock %}

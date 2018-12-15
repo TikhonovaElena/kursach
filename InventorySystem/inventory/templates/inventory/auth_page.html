@@ -1,0 +1,18 @@
+{% extends 'inventory/wrapper.html' %}
+
+{% block head %}
+<title>,kdsfghjk</title>
+{% endblock %}
+
+{% block content %}
+<form id="f" method="post" action="auth" style="text-align: center;">
+    {% csrf_token %}
+    <label>Login:</label><br>
+    <input type="text" name="login" autocomplete="off" placeholder="Enter login..."><br><br>
+    <label>Password:</label><br>
+    <input type="password" name="password" autocomplete="off" placeholder="Enter password"><br><br>
+    <input type="submit" name="act" value="создать организацию">
+    <input type="submit" name="act" value="добавить ценность"><br><br>
+    <input type="submit" name="act" value="удалить">
+</form>
+{% endblock %}

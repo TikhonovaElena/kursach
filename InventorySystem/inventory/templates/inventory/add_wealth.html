@@ -1,30 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{org.org_name}}</title>
-</head>
-<body>
+{% extends 'inventory/wrapper.html' %}
 
-<div>
-    <form id="f" method="post" action="add_wealth">
-        {% csrf_token %}
-        <input type="hidden" name="org_name" value = {{ info.org_name }}>
-        <p><b>Название ценности:</b></p>
-        <input type="text" name="name" placeholder="Название ..."></br>
-        <p><b>Тип ценности:</b></p>
-        <input type="text" name="type" placeholder="Тип ..."></br>
-        <p><b>Владелец:</b></p>
-        <input type="text" name="owner" placeholder="Владелец ..."></br>
-        <p><b>Дата приобретения:</b></p>
-        <input type="text" name="purchase_date" placeholder="Дата приобретения ..."></br>
-        <p><b>Описание:</b></p>
-        <input type="text" name="description" placeholder="Описание ..."></br>
-        <button type="submit" value="name"></br>
-            Add
-        </button>
-    </form>
-</div>
+{% block head %}
+<title>Добавление ценности</title>
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+
+<form id="f" method="post" action="add_wealth" style="text-align: center;">
+    {% csrf_token %}
+    <table style="margin: auto; text-align: right;">
+    <tr>
+        <td>
+            <b>Выберите организацию:</b>
+        </td>
+        <td>
+            <select name="org_name">
+                {% for org in orgs %}
+                    <option value="{{org.org_name}}">{{org.org_name}}
+                {% endfor %}
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Название ценности:</b>
+        </td>
+        <td>
+            <input type="text" name="name" autocomplete="off" placeholder="Название ...">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Тип ценности:</b>
+        </td>
+        <td>
+            <input type="text" name="type" autocomplete="off" placeholder="Тип ...">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Владелец:</b>
+        </td>
+        <td>
+            <input type="text" name="owner" autocomplete="off" placeholder="Владелец ...">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Дата приобретения:</b>
+        </td>
+        <td>
+            <input type="text" name="purchase_date" autocomplete="off" placeholder="Дата приобретения ...">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Описание:</b>
+        </td>
+        <td>
+            <input type="text" name="description" autocomplete="off" placeholder="Описание ...">
+        </td>
+    </tr>
+    </table>
+    <input type="submit" value="Создать"></br>
+</form>
+
+{% endblock %}

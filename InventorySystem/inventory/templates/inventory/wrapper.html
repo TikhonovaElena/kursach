@@ -8,7 +8,14 @@
 	{% endblock %}
 </head>
 <body>
-	<header>lklklk</header>
+	<header>
+		<form id="f" method="post" action="ap">
+			{% csrf_token %}
+			<button style="height: 87px;" type="submit">
+				Добавить или удалить данные
+			</button>
+		</form>
+	</header>
 	<div class="block">
 		{% block content %}
 		{% endblock %}
