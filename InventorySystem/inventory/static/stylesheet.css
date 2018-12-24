@@ -5,20 +5,20 @@
 	font-size: 16px;
 }
 header {
- display: block; /* Для старых браузеров */
+ display: block;
  /*background-image: url("image/gold1.jpg");
  color: #181818;*/
  height: 80px;
- /*margin-bottom: 20px;*/
  background-color: #181818;
 }
 body {
-	background-image: url("image/gold1.jpg");
+	background-image: url("image/gold1.2.jpg");
 }
 
 .block {
 	background-color: #181818;
-	color: #ffbb11;
+	/*color: #ffbb11;*/
+	color: #e6611c;
 	width: 80%;
 	margin-left: 10%;
 	margin-top: 20px;
@@ -34,7 +34,8 @@ div .about{
 }
 
 .descriprion {
-	color: #ffbb11;
+	/*color: #ffbb11;*/
+	color: #e6611c;
 }
 
 .t-pink {
@@ -48,13 +49,14 @@ div .about{
 }
 .t-pink th {
 	color: #181818;
-	background: #ffbb11;
-	/*background: #ff4488;*/
+	/*background: #ffbb11;*/
+	background: #e6611c;
 	border-bottom: 1px solid #ff4488;
 	padding: 12px 17px;
 }
 .t-pink td {
-	color: #e1e1e1;
+	/*color: #e1e1e1;*/
+	color: #eeff7e;
 	border-bottom: 1px solid #ff4488;
 	border-right: 1px solid #ff4488;
 	padding: 7px 17px;
@@ -70,20 +72,28 @@ div .about{
 }
 
 *::selection {
-	color: #ff4488;
+	/*color: #ff4488;*/
+	color: #eeff7e;
 	background: none;
 }
 *::-moz-selection {
-	color: #ff4488;
+	/*color: #ff4488;*/
+	color: #eeff7e;
 	background: none;
 }
+
+p {
+	margin: 20px;
+}
+
 button {
 	position: absolute;
 	width: 100%;
 	left: 0px;
 	height: 2.5em;
 	background: none;
-	color: #e1e1e1;
+	/*color: #e1e1e1;*/
+	color: #eeff7e;
 	margin-top: -7px;
 	border: none;
 	outline: none;
@@ -95,7 +105,8 @@ select, input {
 	height: 3em;
 	background: #181818;
 	border: 1px solid #ff4488;
-	color: #e1e1e1;
+	/*color: #e1e1e1;*/
+	color: #eeff7e;
 	outline: none;
 	text-align: center;
 }
@@ -103,9 +114,6 @@ select, input {
 option {
 	color: #ff4488;
 }
-/*b::selection {
-	color: #e1e1e1;
-}*/
 
 
 
